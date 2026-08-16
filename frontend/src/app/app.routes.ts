@@ -8,6 +8,7 @@ import { SettingsComponent } from './features/settings/settings.component';
 import { ProfileComponent } from './features/profile/profile.component';
 import { LeadListComponent } from './features/leads/lead-list/lead-list.component';
 import { KanbanBoardComponent } from './features/pipeline/kanban-board/kanban-board.component';
+import { CustomerListComponent } from './features/customers/customer-list/customer-list.component';
 import { ComingSoonComponent } from './features/coming-soon/coming-soon.component';
 
 export const routes: Routes = [
@@ -23,11 +24,11 @@ export const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'leads', component: LeadListComponent },
       { path: 'pipeline', component: KanbanBoardComponent },
+      { path: 'customers', component: CustomerListComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'profile', component: ProfileComponent },
       
-      // Placeholder routes for Phase 3+ modules
-      { path: 'customers', component: ComingSoonComponent, data: { title: 'Customer 360 & Contacts', icon: '👥', phase: 'Phase 3' } },
+      // Placeholder routes for Phase 6+ modules
       { path: 'activities', component: ComingSoonComponent, data: { title: 'Activities & Tasks', icon: '📅', phase: 'Phase 3' } },
       { path: 'quotations', component: ComingSoonComponent, data: { title: 'Quotations & Proposal Builder', icon: '📄', phase: 'Phase 7' } },
       { path: 'invoices', component: ComingSoonComponent, data: { title: 'Invoices & Billing', icon: '💳', phase: 'Phase 11' } },
