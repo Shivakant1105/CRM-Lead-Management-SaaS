@@ -7,8 +7,15 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "http://localhost:8080/api/:splat"
+  to = "https://flowcrm-backend.onrender.com/api/:splat"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/actuator/*"
+  to = "https://flowcrm-backend.onrender.com/actuator/:splat"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/*"
