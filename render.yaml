@@ -1,16 +1,20 @@
-# Render Infrastructure Blueprint Configuration for FlowCRM
+# Render Blueprint Specification Version 1
+version: "1"
+
 services:
   - type: web
     name: flowcrm-backend
-    env: docker
+    runtime: docker
+    repo: https://github.com/Shivakant1105/CRM-Lead-Management-SaaS
+    plan: free
+    region: singapore
+    healthCheckPath: /actuator/health
     dockerContext: backend
     dockerfilePath: backend/Dockerfile
-    region: singapore
-    plan: free
-    healthCheckPath: /actuator/health
+    autoDeployTrigger: commit
     envVars:
       - key: PORT
-        value: 8080
+        value: "8080"
       - key: SPRING_PROFILES_ACTIVE
         value: prod
       - key: DATABASE_URL
