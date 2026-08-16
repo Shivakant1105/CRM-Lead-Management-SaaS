@@ -81,7 +81,9 @@ export class AuthService {
         this.fetchProfile();
       },
       error: () => {
-        this.clearSession();
+        this.isAuthenticated.set(false);
+        this.accessToken.set(null);
+        this.currentUser.set(null);
       }
     });
   }
