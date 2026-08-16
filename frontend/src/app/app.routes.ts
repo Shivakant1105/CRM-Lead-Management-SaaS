@@ -6,6 +6,8 @@ import { ShellComponent } from './layout/shell/shell.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { SettingsComponent } from './features/settings/settings.component';
 import { ProfileComponent } from './features/profile/profile.component';
+import { LeadListComponent } from './features/leads/lead-list/lead-list.component';
+import { KanbanBoardComponent } from './features/pipeline/kanban-board/kanban-board.component';
 import { ComingSoonComponent } from './features/coming-soon/coming-soon.component';
 
 export const routes: Routes = [
@@ -19,13 +21,13 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'leads', component: LeadListComponent },
+      { path: 'pipeline', component: KanbanBoardComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'profile', component: ProfileComponent },
       
-      // Placeholder routes for Phase 2+ modules
-      { path: 'leads', component: ComingSoonComponent, data: { title: 'Lead Management', icon: '🎯', phase: 'Phase 2' } },
-      { path: 'pipeline', component: ComingSoonComponent, data: { title: 'Sales Pipeline Kanban', icon: '📈', phase: 'Phase 4' } },
-      { path: 'customers', component: ComingSoonComponent, data: { title: 'Customer 360 & Contacts', icon: '👥', phase: 'Phase 5' } },
+      // Placeholder routes for Phase 3+ modules
+      { path: 'customers', component: ComingSoonComponent, data: { title: 'Customer 360 & Contacts', icon: '👥', phase: 'Phase 3' } },
       { path: 'activities', component: ComingSoonComponent, data: { title: 'Activities & Tasks', icon: '📅', phase: 'Phase 3' } },
       { path: 'quotations', component: ComingSoonComponent, data: { title: 'Quotations & Proposal Builder', icon: '📄', phase: 'Phase 7' } },
       { path: 'invoices', component: ComingSoonComponent, data: { title: 'Invoices & Billing', icon: '💳', phase: 'Phase 11' } },
