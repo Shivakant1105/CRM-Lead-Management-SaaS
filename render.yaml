@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: flowcrm-backend
+    env: docker
+    dockerContext: backend
+    dockerfilePath: backend/Dockerfile
+    region: singapore
+    plan: free
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DATABASE_URL
+        fromDatabase:
+          name: flowcrm-db
+          property: connectionString
+      - key: DATABASE_USERNAME
+        fromDatabase:
+          name: flowcrm-db
+          property: user
+      - key: DATABASE_PASSWORD
+        fromDatabase:
+          name: flowcrm-db
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://crm-lead-management-saas.netlify.app,http://localhost:4200,http://localhost
+
+databases:
+  - name: flowcrm-db
+    databaseName: flowcrm
+    user: flowcrm_user
+    region: singapore
+    plan: free
