@@ -1,0 +1,19 @@
+# Netlify Configuration for FlowCRM Angular SPA
+
+[build]
+  base = "frontend"
+  publish = "dist/flowcrm-frontend/browser"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:8080/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
