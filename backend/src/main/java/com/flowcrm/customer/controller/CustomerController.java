@@ -101,14 +101,14 @@ public class CustomerController {
         return ApiResponse.success(updated, "Customer updated successfully.");
     }
 
-    @PATCHMapping("/{id}/archive")
+    @PatchMapping("/{id}/archive")
     @PreAuthorize("hasAuthority('CUSTOMER_UPDATE') or hasAuthority('TENANT_ADMIN')")
     public ApiResponse<Void> archiveCustomer(@PathVariable Long id) {
         customerService.archiveCustomer(id);
         return ApiResponse.success(null, "Customer archived.");
     }
 
-    @PATCHMapping("/{id}/restore")
+    @PatchMapping("/{id}/restore")
     @PreAuthorize("hasAuthority('CUSTOMER_UPDATE') or hasAuthority('TENANT_ADMIN')")
     public ApiResponse<Void> restoreCustomer(@PathVariable Long id) {
         customerService.restoreCustomer(id);
